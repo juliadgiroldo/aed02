@@ -1,0 +1,97 @@
+# Project: Lista1
+# Makefile created by Dev-C++ 5.11
+
+CPP      = g++.exe
+CC       = gcc.exe
+WINDRES  = windres.exe
+OBJ      = q1.o q2.o q3.o q4.o q20.o q21.o q22.o q23.o q24.o questao05.o questao06.o questao07.o questao08.o questao09.o questao10.o questao11.o questao12.o questao13.o questao14.o questao15.o questao16.o questao17.o questao18.o questao19.o "Sem\ Título5.o"
+LINKOBJ  = q1.o q2.o q3.o q4.o q20.o q21.o q22.o q23.o q24.o questao05.o questao06.o questao07.o questao08.o questao09.o questao10.o questao11.o questao12.o questao13.o questao14.o questao15.o questao16.o questao17.o questao18.o questao19.o "Sem Título5.o"
+LIBS     = -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib" -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc
+INCS     = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include"
+CXXINCS  = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++"
+BIN      = Lista1.exe
+CXXFLAGS = $(CXXINCS) 
+CFLAGS   = $(INCS) 
+RM       = rm.exe -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CC) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+q1.o: q1.c
+	$(CC) -c q1.c -o q1.o $(CFLAGS)
+
+q2.o: q2.c
+	$(CC) -c q2.c -o q2.o $(CFLAGS)
+
+q3.o: q3.c
+	$(CC) -c q3.c -o q3.o $(CFLAGS)
+
+q4.o: q4.c
+	$(CC) -c q4.c -o q4.o $(CFLAGS)
+
+q20.o: q20.c
+	$(CC) -c q20.c -o q20.o $(CFLAGS)
+
+q21.o: q21.c
+	$(CC) -c q21.c -o q21.o $(CFLAGS)
+
+q22.o: q22.c
+	$(CC) -c q22.c -o q22.o $(CFLAGS)
+
+q23.o: q23.c
+	$(CC) -c q23.c -o q23.o $(CFLAGS)
+
+q24.o: q24.c
+	$(CC) -c q24.c -o q24.o $(CFLAGS)
+
+questao05.o: questao05.c
+	$(CC) -c questao05.c -o questao05.o $(CFLAGS)
+
+questao06.o: questao06.c
+	$(CC) -c questao06.c -o questao06.o $(CFLAGS)
+
+questao07.o: questao07.c
+	$(CC) -c questao07.c -o questao07.o $(CFLAGS)
+
+questao08.o: questao08.c
+	$(CC) -c questao08.c -o questao08.o $(CFLAGS)
+
+questao09.o: questao09.c
+	$(CC) -c questao09.c -o questao09.o $(CFLAGS)
+
+questao10.o: questao10.c
+	$(CC) -c questao10.c -o questao10.o $(CFLAGS)
+
+questao11.o: questao11.c
+	$(CC) -c questao11.c -o questao11.o $(CFLAGS)
+
+questao12.o: questao12.c
+	$(CC) -c questao12.c -o questao12.o $(CFLAGS)
+
+questao13.o: questao13.c
+	$(CC) -c questao13.c -o questao13.o $(CFLAGS)
+
+questao14.o: questao14.c
+	$(CC) -c questao14.c -o questao14.o $(CFLAGS)
+
+questao15.o: questao15.c
+	$(CC) -c questao15.c -o questao15.o $(CFLAGS)
+
+questao16.o: questao16.c
+	$(CC) -c questao16.c -o questao16.o $(CFLAGS)
+
+questao17.o: questao17.c
+	$(CC) -c questao17.c -o questao17.o $(CFLAGS)
+
+questao18.o: questao18.c
+	$(CC) -c questao18.c -o questao18.o $(CFLAGS)
+
+questao19.o: questao19.c
+	$(CC) -c questao19.c -o questao19.o $(CFLAGS)
