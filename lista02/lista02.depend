@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1684466531 source:c:\users\precision m6700\documents\aed02\lista02\main.c
+	<stdio.h>
+	<stdlib.h>
+	<locale.h>
+
