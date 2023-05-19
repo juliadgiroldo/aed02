@@ -4,7 +4,7 @@
             "name": "Win32",
             "includePath": [
                 "${workspaceFolder}/**",
-                "C:\\Users\\Precision M6700\\Documents\\aed02\/**"
+                "C:\\Users\\Precision M6700\\Documents\\aed02\\lista01**"
 
                 //${workspaceFolder}/** C:\Users\Precision M6700\Documents\aed02/**
 
