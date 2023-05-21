@@ -2,11 +2,12 @@
 #include <stdlib.h>
 #include <locale.h>
 #define N 9
+#define MAX 10
 
 
 // METODO BUBBLE SORT
 
-int metodoBbs(){
+/*int metodoBbs(){
 	setlocale(LC_ALL, "");
 
 	int num[10];
@@ -124,15 +125,167 @@ void metodoSs(){
 	for(i = 0; i< n;i++){
 		printf("%4d", vetor[i]);
 	}
+}*/
+// METODO MERGESORT
+
+void merge(int arr[], int l, int m, int r)
+{
+    int i, j, k;
+    int n1 = m - l + 1;
+    int n2 = r - m;
+
+    /* create temp arrays */
+    int L[n1], R[n2];
+
+    /* Copy data to temp arrays L[] and R[] */
+    for (i = 0; i < n1; i++)
+        L[i] = arr[l + i];
+    for (j = 0; j < n2; j++)
+        R[j] = arr[m + 1 + j];
+
+    /* Merge the temp arrays back into arr[l..r]*/
+    i = 0; // Initial index of first subarray
+    j = 0; // Initial index of second subarray
+    k = l; // Initial index of merged subarray
+    while (i < n1 && j < n2) {
+        if (L[i] <= R[j]) {
+            arr[k] = L[i];
+            i++;
+        }
+        else {
+            arr[k] = R[j];
+            j++;
+        }
+        k++;
+    }
+
+    /* Copy the remaining elements of L[], if there
+    are any */
+    while (i < n1) {
+        arr[k] = L[i];
+        i++;
+        k++;
+    }
+
+    /* Copy the remaining elements of R[], if there
+    are any */
+    while (j < n2) {
+        arr[k] = R[j];
+        j++;
+        k++;
+    }
 }
 
+/* l is for left index and r is right index of the
+sub-array of arr to be sorted */
+void mergeSort(int arr[], int l, int r)
+{
+    if (l < r) {
+        // Same as (l+r)/2, but avoids overflow for
+        // large l and h
+        int m = l + (r - l) / 2;
+
+        // Sort first and second halves
+        mergeSort(arr, l, m);
+        mergeSort(arr, m + 1, r);
+
+        merge(arr, l, m, r);
+    }
+}
+
+/* UTILITY FUNCTIONS */
+/* Function to print an array */
+void printArray(int A[], int size)
+{
+    int i;
+    for (i = 0; i < size; i++)
+        printf("%d ", A[i]);
+    printf("\n");
+}
+
+/* Driver code */
+int metodoMerge()
+{
+    int arr[] = { 12, 11, 13, 5, 6, 7 };
+    int arr_size = sizeof(arr) / sizeof(arr[0]);
+
+    printf("Vetor original \n");
+    printArray(arr, arr_size);
+
+    mergeSort(arr, 0, arr_size - 1);
+
+    printf("\nVetor ordenado  \n");
+    printArray(arr, arr_size);
+    return 0;
+}
+ 
+// Função main
+void metodoQs()
+{
+ int i, vet[MAX];
+ 
+ // Lê MAX ou 10 valores
+ for(i = 0; i < MAX; i++)
+ {
+  printf("Digite um valor: ");
+  scanf("%d", &vet[i]);
+ }
+ 
+ // Ordena os valores
+ quick_sort(vet, 0, MAX - 1);
+ 
+ // Imprime os valores ordenados
+
+ printf("\nValores ordenados\n");
+ for(i = 0; i < MAX; i++)
+ {
+  printf("%d\t", vet[i]);
+ }
+ system("pause");
+}
+ 
+// Função de Ordenação por Seleção
+void quick_sort(int *a, int left, int right) {
+    int i, j, x, y;
+     
+    i = left;
+    j = right;
+    x = a[(left + right) / 2];
+     
+    while(i <= j) {
+        while(a[i] < x && i < right) {
+            i++;
+        }
+        while(a[j] > x && j > left) {
+            j--;
+        }
+        if(i <= j) {
+            y = a[i];
+            a[i] = a[j];
+            a[j] = y;
+            i++;
+            j--;
+        }
+    }
+     
+    if(j > left) {
+        quick_sort(a, left, j);
+    }
+    if(i < right) {
+        quick_sort(a, i, right);
+    }
+}
 int main()
 {
-    printf("METODO BUBBLE SORT\n");
+    /*printf("METODO BUBBLE SORT\n");
     metodoBbs();
     printf("\nMETODO DE INSERCAO\n");
     metodoIs();
     printf("\nMETODO DE SELECAO\n");
-    metodoSs();
+    metodoSs();*/
+    printf("\nMETODO DE MERGE\n");
+    metodoMerge();
+    printf("\nMETODO DE QUICK\n");
+    metodoQs();
     return 0;
 }
